@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Task3</title>
+</head>
+<body>
+    <!--<label for="num1">1st Number :</label>
+    <input type="number" name="num1" id="n1"/>
+    <br>
+    <label for="num2">2nd Number:</label>
+    <input type="number" name="num2" id="n2"/>
+    <br>-->
+    1st Number :<input type="number" id="n1"/>
+    <br>
+    2nd Number:<input type="number" id="n2"/>
+    <br>
+    <button onclick="f1()">Multiply</button>
+    <button onclick="f2()">Divide</button>
+
+    <script>
+        function f1()
+        {
+            var a = document.getElementById("n1").value;
+            var b = document.getElementById("n2").value;
+            document.getElementById("res").innerHTML = a * b;
+        }
+        function f2()
+        {
+            var c = document.getElementById("n1").value;
+            var d = document.getElementById("n2").value;
+            document.getElementById("res").innerHTML = c / d;
+        }
+    </script>
+    <br>
+    <br>
+    The Result is:
+    <br>
+    <span id="res"></span>
+</body>
+</html>

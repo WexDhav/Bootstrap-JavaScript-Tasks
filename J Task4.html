@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Task4</title>
+</head>
+<body>
+    <button onclick="f1()">show date</button>
+    <br>
+    <span id="date"></span>
+    <br>
+    <br>
+    <button onclick="f2()">show time</button>
+    <br>
+    <span id="time"></span>
+    <script>
+        function f1()
+        {
+            const d = new Date();
+            let monthN = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+            var date = d.getDate();
+            var month = monthN[d.getMonth()];
+            var year = d.getFullYear();
+
+            document.getElementById("date").innerHTML = date+"/"+month+"/"+year;
+        }
+        function f2()
+        {
+            const d = new Date();
+            document.getElementById("time").innerHTML = d;
+        }
+    </script>
+</body>
+</html>

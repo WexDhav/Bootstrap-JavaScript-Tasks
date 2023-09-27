@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Task7</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+     rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+     crossorigin="anonymous">
+</head>
+<body>
+    <img id="i1" src="./train.png" style="padding-top: 5%;padding-bottom: 2%;">
+    <div style="padding-left: 10%;">
+        <h3 style="color: darkblue;font-family: 'Times New Roman', Times, serif;padding-bottom: 1%;">
+            Click the following buttons to handle animation
+        </h3>
+        <div style="padding-left: 15%;">
+            <input type="button" value="Start" onclick="f1()">
+            <input type="button" value="Stop" onclick="f2()">
+        </div>
+    </div>
+
+    <script>
+        var imgObj = null;
+        var animate;
+
+        function f(){
+            imgObj = document.getElementById('i1');
+            imgObj.style.position = 'relative';
+            imgObj.style.left = '0px';
+        }
+
+        function f1(){
+            var currentPosition = parseInt(imgObj.style.left);
+            var newPosition = currentPosition + 10;
+            imgObj.style.left = newPosition + 'px';
+
+            if (newPosition < window.innerWidth) {
+                animate = setTimeout(f1, 40);
+            } else {
+                // Reset the image position to the beginning
+                imgObj.style.left = '0px';
+                f1(); // Restart the animation
+            }
+        }
+
+        function f2(){
+            clearTimeout(animate);
+            imgObj.style.left = '0px';
+        }
+
+        window.onload = f;
+    </script>
+</body>
+</html>

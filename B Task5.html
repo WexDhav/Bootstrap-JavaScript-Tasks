@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Task5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+     rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+     crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" type="text/css">
+    <style>
+        .container{
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgb(237, 236, 236);
+        }
+        label{
+            text-align: right;
+            padding-right: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <form>
+            <div class="input-group mb-3">
+                <label id="l1" for="i1" class="col-2">First Name</label>
+                <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+                <input id="i1" type="text" class="form-control" placeholder="First Name">
+                <div class="invalid-feedback" style="padding-left: 16.33333%;">
+                    Please supply your first name
+                </div>
+            </div> 
+
+            <div class="input-group mb-3">
+                <label id="l2" for="i2" class="col-2">Last Name</label>
+                <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+                <input id="i2" type="text" class="form-control col-10" placeholder="Last Name">
+                <div class="invalid-feedback" style="padding-left: 16.33333%;">
+                    Please supply your last name
+                </div>
+            </div>  
+
+            <div class="input-group mb-3">
+                <label id="l3" for="i3" class="col-2">E-Mail</label>
+                <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+                <input id="i3" type="email" class="form-control" placeholder="E-Mail Address">
+                <div class="invalid-feedback" style="padding-left: 16.33333%;">
+                    Please supply your email address
+                </div>
+            </div>
+
+            <div class="input-group mb-3">
+                <label id="l4" for="i4" class="col-2">Phone#</label>
+                <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
+                <input id="i4" type="tel" class="form-control" placeholder="(845)555-1212">
+                <div class="invalid-feedback" style="padding-left: 16.33333%;">
+                    Please supply your phone number
+                </div>
+            </div>
+
+            <div class="input-group mb-3">
+                <label id="l5" for="i5" class="col-2">Address</label>
+                <span class="input-group-text"><i class="fa-solid fa-house"></i></span>
+                <input id="i5" type="text" class="form-control" placeholder="Address">
+                <div class="invalid-feedback" style="padding-left: 16.33333%;">
+                    Please supply your street address
+                </div>
+            </div>
+
+            <div class="input-group mb-3">
+                <label id="l6" for="i6" class="col-2">City</label>
+                <span class="input-group-text"><i class="fa-solid fa-house"></i></span>
+                <input id="i6" type="text" class="form-control" placeholder="city">
+                <div class="invalid-feedback" style="padding-left: 16.33333%;">
+                    Please supply your city
+                </div>
+            </div>
+
+            <div class="input-group mb-3">
+                <label for="i7" class="col-2">State</label>
+                <span class="input-group-text"><i class="fa-solid fa-list"></i></span>
+                <select id="i7" class="form-select">
+                    <option>Please select your state</option>
+                    <option>Anddhra Pradesh</option>
+                    <option>Arunachal Pradesh</option>
+                    <option>Assam</option>
+                    <option>Bihar</option>
+                    <option>Chhattisgarh</option>
+                    <option>Goa</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            
+            <div class="row mb-3">
+                <div class="col-3"><label for="radioGroup">Do you have hosting?</label></div>
+                <div class="col-9">
+                    <div class="form-check">
+                        <input id="i8" name="radioGroup" type="radio" class="form-check-input">
+                        <label for="i8" class="form-check-label">Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input id="i9" name="radioGroup" type="radio" class="form-check-input">
+                        <label for="i9" class="form-check-label">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-group mb-3">
+                <label class="col-3">Project Description</label>
+                <span class="input-group-text"><i class="fa-solid fa-pen"></i></span>
+                <textarea class="form-control"></textarea>
+            </div>
+
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-9">
+                    <button type="button" onclick="f1()" class="btn btn-warning text-light">Send <i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function f1()
+        {
+            var fname = document.querySelector('#i1');
+            var lname = document.querySelector('#i2');
+            var email = document.querySelector('#i3');
+            var phone = document.querySelector('#i4');
+            var address = document.querySelector('#i5');
+            var city = document.querySelector('#i6');
+
+            var Lfname = document.querySelector('#l1');
+            var Llname = document.querySelector('#l2');
+            var Lemail = document.querySelector('#l3');
+            var Lphone = document.querySelector('#l4');
+            var Laddress = document.querySelector('#l5');
+            var Lcity = document.querySelector('#l6');
+
+            if(fname.value.trim() === '')
+            {
+                fname.classList.add('is-invalid');
+                Lfname.classList.add('text-danger');
+            }else
+            {
+                fname.classList.remove('is-invalid');
+                Lfname.classList.remove('text-danger');
+            }
+
+            if(lname.value.trim() === '')
+            {
+                lname.classList.add('is-invalid');
+                Llname.classList.add('text-danger');
+            }else
+            {
+                lname.classList.remove('is-invalid');
+                Llname.classList.remove('text-danger');
+            }
+
+            if(email.value.trim() === '')
+            {
+                email.classList.add('is-invalid');
+                Lemail.classList.add('text-danger');
+            }else
+            {
+                email.classList.remove('is-invalid');
+                Lemail.classList.remove('text-danger');
+            }
+
+            if(phone.value.trim() === '')
+            {
+                phone.classList.add('is-invalid');
+                Lphone.classList.add('text-danger');
+            }else
+            {
+                phone.classList.remove('is-invalid');
+                Lphone.classList.remove('text-danger');
+            }
+
+            if(address.value.trim() === '')
+            {
+                address.classList.add('is-invalid');
+                Laddress.classList.add('text-danger');
+            }else
+            {
+                address.classList.remove('is-invalid');
+                Laddress.classList.remove('text-danger');
+            }
+
+            if(city.value.trim() === '')
+            {
+                city.classList.add('is-invalid');
+                Lcity.classList.add('text-danger');
+            }else
+            {
+                city.classList.remove('is-invalid');
+                Lcity.classList.remove('text-danger');
+            }            
+        }
+    </script>
+</body>
+</html>
